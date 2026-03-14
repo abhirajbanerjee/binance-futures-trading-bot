@@ -1,0 +1,32 @@
+2026-03-15 02:32:20 | INFO  | cli | Received order request BTCUSDT BUY INVALID qty=0.001 price=None
+2026-03-15 02:32:20 | ERROR | cli | Validation failed: Invalid order type 'INVALID'. Allowed values: LIMIT, MARKET.
+2026-03-15 02:32:28 | INFO  | cli | Received order request BTCUSDT BUY LIMIT qty=0.001 price=None
+2026-03-15 02:32:28 | ERROR | cli | Validation failed: Price is required for LIMIT orders. Use --price <value>.
+2026-03-15 02:35:37 | INFO  | cli | Received order request BTCUSDT BUY MARKET qty=0.001 price=None
+2026-03-15 02:35:37 | DEBUG | validators | Validated order parameters: {'symbol': 'BTCUSDT', 'side': 'BUY', 'order_type': 'MARKET', 'quantity': 0.001, 'price': None}
+2026-03-15 02:35:37 | DEBUG | proactor_events | Using proactor: IocpProactor
+2026-03-15 02:35:37 | DEBUG | connectionpool | Starting new HTTPS connection (1): testnet.binance.vision:443
+2026-03-15 02:35:38 | DEBUG | connectionpool | https://testnet.binance.vision:443 "GET /api/v3/ping HTTP/1.1" 200 2
+2026-03-15 02:35:38 | INFO  | client | Binance Futures Testnet client initialised successfully
+2026-03-15 02:35:38 | INFO  | orders | Placing MARKET order BTCUSDT BUY qty=0.001
+2026-03-15 02:35:38 | INFO  | client | Sending order request to Binance: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001'}
+2026-03-15 02:35:38 | DEBUG | connectionpool | Starting new HTTPS connection (1): testnet.binancefuture.com:443
+2026-03-15 02:35:40 | DEBUG | connectionpool | https://testnet.binancefuture.com:443 "POST /fapi/v1/order HTTP/1.1" 400 100
+2026-03-15 02:35:40 | ERROR | client | Binance API error [400]: Order's notional must be no smaller than 100 (unless you choose reduce only).
+2026-03-15 02:35:40 | ERROR | cli | API error: Binance API error: Order's notional must be no smaller than 100 (unless you choose reduce only).
+2026-03-15 02:35:41 | INFO  | cli | Received order request BTCUSDT SELL LIMIT qty=0.001 price=65000
+2026-03-15 02:35:41 | DEBUG | validators | Validated order parameters: {'symbol': 'BTCUSDT', 'side': 'SELL', 'order_type': 'LIMIT', 'quantity': 0.001, 'price': 65000.0}
+2026-03-15 02:35:41 | DEBUG | proactor_events | Using proactor: IocpProactor
+2026-03-15 02:35:41 | DEBUG | connectionpool | Starting new HTTPS connection (1): testnet.binance.vision:443
+2026-03-15 02:35:42 | DEBUG | connectionpool | https://testnet.binance.vision:443 "GET /api/v3/ping HTTP/1.1" 200 2
+2026-03-15 02:35:42 | INFO  | client | Binance Futures Testnet client initialised successfully
+2026-03-15 02:35:42 | INFO  | orders | Placing LIMIT order BTCUSDT SELL qty=0.001 price=65000.0
+2026-03-15 02:35:42 | INFO  | client | Sending order request to Binance: {'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': '0.001', 'price': '65000.0', 'timeInForce': 'GTC'}
+2026-03-15 02:35:42 | DEBUG | connectionpool | Starting new HTTPS connection (1): testnet.binancefuture.com:443
+2026-03-15 02:35:42 | DEBUG | connectionpool | https://testnet.binancefuture.com:443 "POST /fapi/v1/order HTTP/1.1" 400 64
+2026-03-15 02:35:42 | ERROR | client | Binance API error [400]: Limit price can't be lower than 67174.59.
+2026-03-15 02:35:42 | ERROR | cli | API error: Binance API error: Limit price can't be lower than 67174.59.
+2026-03-15 02:40:11 | INFO  | cli | Received order request: symbol=BTCUSDT side=BUY type=LIMIT qty=0.001 price=None
+2026-03-15 02:40:11 | ERROR | cli | ValidationError: Price is required for LIMIT orders. Use --price <value>.
+2026-03-15 02:40:21 | INFO  | cli | Received order request: symbol=BTCUSDT side=BUY type=INVALID qty=0.001 price=None
+2026-03-15 02:40:21 | ERROR | cli | ValidationError: Invalid order type 'INVALID'. Allowed: LIMIT, MARKET.
